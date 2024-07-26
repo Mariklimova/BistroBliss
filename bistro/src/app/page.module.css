@@ -1,0 +1,65 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.backgraund_img {
+    background-image: url('./assets/bg.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+    background-position: center;
+}
+
+.title_text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #2C2F24;
+}
+
+.title_text h1 {
+    width: 667px;
+    font: 400 100px Playfair Display;
+    margin-top: 171px;
+
+}
+
+.title_text p {
+    width: 537px;
+    font: 400 20px DM Sans;
+    margin-top: 32px;
+}
+
+.title_btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.btn_book {
+    padding: 20px 32px;
+    border-radius: 118px;
+    background-color: #AD343E;
+    font: 700 16px DM Sans;
+    line-height: 24px;
+    text-align: right;
+    color: #FFFFFF;
+    border: none;
+
+}
+
+.btn_menu {
+    padding: 20px 32px;
+    border-radius: 118px;
+    border: 1.5px solid #2C2F24;
+    font: 700 16px DM Sans;
+}
+
+.btn_book:hover, .btn_menu:hover{
+    transform: scale(1.1);
+}
