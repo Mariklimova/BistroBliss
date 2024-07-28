@@ -1,0 +1,35 @@
+
+@mixin flex_function ($direction, $justify, $align, $gap ) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+@mixin img_function ($image, $size, $width, $height, $margin, $radius ) {
+    background-image:$image;
+    // background-image: url('../../app/components/Header/assets/phone.svg');
+    background-repeat: no-repeat;
+    background-size: $size;
+    width: $width;
+    height: $height;
+    margin: $margin;
+    border-radius: $radius;
+}
+
+@mixin text_function ($style, $weight, $font_size, $family, $color, $text-align) {
+    font-style: $style;
+    font-weight: $weight;
+    font-size: $font_size;
+    font-family: $family;
+    color: $color;
+    text-align: $text-align;
+}
+
+@mixin border_function ($border, $color, $radius, $padding) {
+    border: $border;
+    background-color: $color;
+    border-radius: $radius;
+    padding: $padding;
+}

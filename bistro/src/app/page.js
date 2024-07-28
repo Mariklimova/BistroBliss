@@ -10,6 +10,12 @@ export default function Home() {
     { icon: style.icon_drinks, title: 'Drinks', text: 'In the new era of technology we look in the future with certainty and pride for our life.' },
     { icon: style.icon_desserts, title: 'Desserts', text: 'In the new era of technology we look in the future with certainty and pride for our life.' }
   ];
+  const servicesArr = [
+    { img: style.img_caterings, title: 'Caterings', text: 'In the new era of technology we look in the future with certainty for life.' },
+    { img: style.img_birthdays, title: 'Birthdays', text: 'In the new era of technology we look in the future with certainty for life.' },
+    { img: style.img_weddings, title: 'Weddings', text: 'In the new era of technology we look in the future with certainty for life.' },
+    { img: style.img_events, title: 'Events', text: 'In the new era of technology we look in the future with certainty for life.' }
+  ];
 
   return <>
     <Header />
@@ -45,14 +51,20 @@ export default function Home() {
         </div>
 
         <div className={style.services_color}>
-          <section className={style.services}>
+          <section className={style.services_content}>
             <h1 className={style.services_title}>We also offer unique services for your events</h1>
-            <div className={style.service_card}>
-              <div className={style.img_birthdays}></div>
-              <div className={style.service_text}>
-                <h1>Birthdays</h1>
-                <p>In the new era of technology we look in the future with certainty for life.</p>
-              </div>
+            <div className={style.services_cards_wrapper}>
+
+              {servicesArr.map((el) =>
+                <div className={style.service_card}>
+                  <div className={el.img}></div>
+                  <div className={style.service_text}>
+                    <h1>{el.title}</h1>
+                    <p>{el.text}</p>
+                  </div>
+                </div>
+
+              )}
             </div>
           </section>
         </div>
