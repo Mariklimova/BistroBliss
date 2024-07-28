@@ -1,0 +1,149 @@
+@mixin flex_function ($display, $direction, $justify, $align, $gap ) {
+    display: $display;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    gap: $gap;
+}
+
+@mixin img_function ($image, $repeat, $size, $width, $height, $margin ) {
+    background-image: $image;
+    background-repeat: $repeat;
+    background-size: $size;
+    width: $width;
+    height: $height;
+    margin: $margin
+}
+
+@mixin text_function ($style, $weight, $font_size, $family, $color, $text-align) {
+    font-style: $style;
+    font-weight: $weight;
+    font-size: $font_size;
+    font-family: $family;
+    color: $color;
+    text-align: $text-align;
+}
+
+@mixin border_function ($border, $color, $radius, $padding) {
+    border: $border;
+    background-color:  $color;
+    border-radius: $radius;
+    padding: $padding;
+}
+
+.main {
+    @include flex_function(flex, column, start, center, 0);
+    margin: auto;
+}
+
+.backgraund_img {
+    @include img_function(url('./assets/bg.svg'), no-repeat, cover, 100%, 800px, 0);
+    background-position: center;
+}
+
+.title_text {
+    @include flex_function(flex, column, start, center, 0);
+
+    h1 {
+        @include text_function(normal, 400, 100px, Playfair Display, #2C2F24, center);
+        width: 667px;
+        margin-top: 171px;
+
+    }
+
+    p {
+        @include text_function(normal, 400, 20px, DM Sans, #2C2F24, center);
+        width: 537px;
+        margin-top: 32px;
+    }
+}
+
+
+
+.title_btns {
+    @include flex_function(flex, row, center, center, 10px);
+    margin-top: 40px;
+
+    .btn_book {
+        @include text_function(normal, 700, 16px, DM Sans, #FFFFFF, center);
+        @include border_function(none, #AD343E,118px , 20px 32px);
+       
+
+    }
+
+    .btn_menu {
+        @include text_function(normal, 700, 16px, DM Sans, #2C2F24, center);
+        @include border_function(1.5px solid #2C2F24, #FFF,118px , 20px 32px);
+    }
+}
+
+.btn_book:hover,
+.btn_menu:hover {
+    transform: scale(1.1);
+}
+
+.blockMeun_color {
+    background: #FFFFFF;
+}
+
+.menu_content {
+    @include flex_function(flex, column, start, center, 0);
+    height: 712px;
+    margin-top: 92px;
+}
+
+.menu_content_title {
+    @include text_function(normal, 500, 55px, Playfair Display, #2C2F24, center);
+    margin-bottom: 64px;
+}
+
+.menu_cards_wrapper {
+    @include flex_function(flex, row, start, flex-start, 24px);
+}
+
+.menu_card {
+    @include border_function(2px solid  #DBDFD0, #FFFFFF,12px ,34px);
+    width: 306px;
+    height: 375px;
+    text-align: center;
+}
+
+.icon_breakfast {
+    @include img_function(url('./assets/icon\ \(1\).svg'), no-repeat, contain, 100px, 100px, auto);
+}
+
+.icon_mainDishes {
+    @include img_function(url('./assets/icon\ \(2\).svg'), no-repeat, contain, 100px, 100px, auto);
+}
+
+.icon_drinks {
+    @include img_function(url('./assets/icon\ \(3\).svg'), no-repeat, contain, 100px, 100px, auto);
+}
+
+.icon_desserts {
+    @include img_function(url('./assets/icon\ \(4\).svg'), no-repeat, contain, 100px, 100px, auto);
+}
+
+.menu_text {
+    h1 {
+        @include text_function(normal, 700, 24px, DM Sans, #2C2F24, center);
+        margin-top: 30px;
+    }
+
+    p {
+        @include text_function(normal, 400, 16px, DM Sans, #414536, center);
+        margin-top: 15px;
+        margin-bottom: 30px;
+    }
+}
+
+
+.link_card {
+    @include text_function(normal, 700, 16px, DM Sans, #AD343E, center);
+    font-family: DM Sans;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+}
