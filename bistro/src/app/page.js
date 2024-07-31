@@ -1,5 +1,6 @@
 'use client';
-import Header from "./components/Header/Header";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 import style from "./page.module.scss";
 
 export default function Home() {
@@ -36,8 +37,8 @@ export default function Home() {
             <h1 className={style.menu_content_title}>Browse Our Menu</h1>
             <div className={style.menu_cards_wrapper}>
 
-              {menuArr.map((el) =>
-                <div className={style.menu_card}>
+              {menuArr.map((el, i) =>
+                <div className={style.menu_card} key={i}>
                   <div className={el.icon}></div>
                   <div className={style.menu_text}>
                     <h1>{el.title}</h1>
@@ -55,8 +56,8 @@ export default function Home() {
             <h1 className={style.services_title}>We also offer unique services for your events</h1>
             <div className={style.services_cards_wrapper}>
 
-              {servicesArr.map((el) =>
-                <div className={style.service_card}>
+              {servicesArr.map((el, i) =>
+                <div className={style.service_card} key={i}>
                   <div className={el.img}></div>
                   <div className={style.service_text}>
                     <h1>{el.title}</h1>
@@ -71,5 +72,6 @@ export default function Home() {
 
       </main>
     </div>
+    <Footer />
   </>
 }
