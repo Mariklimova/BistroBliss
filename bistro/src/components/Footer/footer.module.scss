@@ -1,16 +1,13 @@
 @import '../../../src/assets/mixin/page.scss';
 
-.footer_color{
+.footer_color {
     background-color: #474747;
 }
-.footer_wrapper{
-    @include flex_function (row, center, flex-start, 120px )
+
+.footer_wrapper {
+    @include flex_function (row, center, flex-start, 120px)
 }
 
-.white_logo{
-    background-image: url('./assets/japanese-food-white.svg');
-    width: 56px;
-    height: 56px;
-    background-repeat: no-repeat;
-    background-size: contain;
+.white_logo {
+    @include img_function (url('../../components/Footer/assets/japanese-food-white.svg'), contain, 56px, 56px, 0, 0);
 }

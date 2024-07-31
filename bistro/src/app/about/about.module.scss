@@ -1,0 +1,86 @@
+@import '../../assets/mixin/page.scss';
+
+.visitcard_color {
+    background-color: #F9F9F7;
+}
+
+.visitcard {
+    @include flex_function (column, start, flex-start, 0);
+    max-width: 1293px;
+    margin: auto;
+}
+
+.visitcard_wrapper {
+    @include flex_function (row, space-between, center, 90px);
+}
+
+.img_visitcard {
+    @include img_function (url('../../app/about/assets/imgFamilyFood.svg'), contain, 649px, 616px, 85px 0 120px, 12px);
+}
+
+.visitcard_text {
+    @include flex_function (column, start, flex-start, 24px);
+    width: 557px;
+    margin: auto;
+
+    h1 {
+        @include text_function (normal, 500, 55px, Playfair Display, #2C2F24, left);
+    }
+
+    h2 {
+        @include text_function (normal, 500, 18px, DM Sans, #2C2F24, left);
+    }
+
+    p {
+        @include text_function (normal, 400, 16px, DM Sans, #414536, left);
+
+    }
+}
+
+.statistic {
+    @include flex_function (row, space-between, center, 0);
+    max-width: 1293px;
+    margin: auto;
+    padding: 138px 0;
+}
+
+.statistic_wrapper {
+    @include flex_function (column, space-between, center, 20px);
+    width: 610px;
+}
+
+.statistic_text {
+    @include flex_function (column, start, center, 20px);
+    width: 610px;
+
+    h1 {
+        @include text_function (normal, 500, 55px, Playfair Display, #2C2F24, left);
+    }
+
+    p {
+        @include text_function (normal, 400, 16px, DM Sans, #414536, left);
+    }
+}
+
+.statistic_block {
+    @include flex_function (row, start, flex-start, 20px);
+    flex-wrap: wrap;
+    width: 610px;
+
+    .statistic_item {
+        @include border_function (1px solid #DBDFD0, #FFFFFF, 8px, 30px 0);
+        width: 293px;
+
+        h2 {
+            @include text_function (normal, 500, 55px, Playfair Display, #2C2F24, center);
+        }
+
+        p {
+            @include text_function (normal, 500, 18px, DM Sans, #2C2F24, center);
+        }
+    }
+}
+
+.img_statistic {
+    @include img_function (url('../../app/about/assets/kitchen.svg'), contain, 555px, 680px, 0, 12px)
+}

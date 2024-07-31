@@ -26,8 +26,12 @@
 .phone p,
 .mail a {
     @include text_function (normal, 400, 16px, DM Sans, #F9F9F7, left);
+
 }
 
+.mail a:hover {
+    text-decoration: underline;
+}
 
 .imgPhone {
     @include img_function (url('../../components/Header/assets/phone.svg'), contain, 18px, 18px, 0, 0);
@@ -79,10 +83,10 @@
 
 .logo {
     @include flex-function(row, start, center, 8px);
-    
+
     .food {
         @include img_function (url('../../components/Header/assets/japanese-food.svg'), contain, 56px, 56px, 0, 0);
-    
+
     }
 
     h1 {

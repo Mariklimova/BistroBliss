@@ -9,7 +9,7 @@
 
 @mixin img_function ($image, $size, $width, $height, $margin, $radius ) {
     background-image:$image;
-    // background-image: url('../../app/menu/assets/pizza.svg');
+    // background-image: url('../../components/Footer/assets/japanese-food-white.svg');
     background-repeat: no-repeat;
     background-size: $size;
     width: $width;
