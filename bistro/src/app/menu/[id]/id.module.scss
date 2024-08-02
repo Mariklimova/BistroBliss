@@ -1,0 +1,63 @@
+@import '../../../assets/mixin/page.scss';
+
+.wrrapper_color{
+background-color: #f9f9f7;
+}
+
+.wrrapper_item{
+    @include flex_function (row, start, flex-start, 90px );
+    width: 1239px;
+    margin: auto;
+    padding: 85px 0;
+}
+
+
+.img_egg {
+    @include img_function (url('../../app/menu/assets/eggs.svg'), contain, 599px, 566px, 0, 20px);
+// background-image: url('../assets/eggs.svg');
+}
+
+.img_pizza {
+    @include img_function (url('../../app/menu/assets/pizza.svg'), contain, 599px, 566px, 0, 12px);
+}
+
+.img_cocktail {
+    @include img_function (url('../../app/menu/assets/cocktail.svg'), contain, 599px, 566px, 0, 12px);
+}
+
+.img_cake {
+    @include img_function (url('../../app/menu/assets/cake.svg'), contain, 599px, 566px, 0, 12px);
+}
+
+.img_lemonade {
+    @include img_function (url('../../app/menu/assets/lemonade.svg'), contain, 599px, 566px, 0, 12px);
+}
+
+.img_icecream {
+    @include img_function (url('../../app/menu/assets/icecream.svg'), contain, 599px, 566px, 0, 12px);
+}
+
+.img_burger {
+    @include img_function (url('../../app/menu/assets/burger.svg'), contain, 599px, 566px, 0, 12px);
+}
+
+.img_waffles {
+    @include img_function (url('../../app/menu/assets/waffles.svg'), contain, 599px, 566px, 0, 12px);
+}
+
+
+.text_item{
+    @include flex_function (column, start, flex-start, 24px );
+    width: 600px;
+    h1{
+        @include text_function (normal, 500, 55px, Playfair Display, #2C2F24, left);
+    }
+
+    h2{
+        @include text_function (normal, 500, 18px, DM Sans, #2C2F24, left);
+    }
+
+    p{
+        @include text_function (normal, 400, 16px, DM Sans, #414536, left);
+    }
+}
