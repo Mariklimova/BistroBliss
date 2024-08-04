@@ -2,12 +2,98 @@
 
 .footer_color {
     background-color: #474747;
+    padding: 120px 120px 85px;
 }
 
 .footer_wrapper {
-    @include flex_function (row, center, flex-start, 120px)
+    @include flex_function (row, start, flex-start, 120px);
+    max-width: 1293px;
 }
 
-.white_logo {
-    @include img_function (url('../../components/Footer/assets/japanese-food-white.svg'), contain, 56px, 56px, 0, 0);
+.column_left {
+    @include flex_function (column, start, flex-start, 30px);
+    width: 550px;
+
+    .footer_logo {
+        @include flex_function (row, start, center, 5px);
+
+        .white_logo {
+            @include img_function (url('../../components/Footer/assets/japanese-food-white.svg'), contain, 56px, 56px, 0, 0);
+        }
+
+        h1 {
+            @include text_function (italic, 600, 32px, Playfair Display, #FFF, left);
+        }
+
+    }
+
+    p {
+        @include text_function (normal, 400, 16px, DM Sans, #ADB29E, justify);
+        margin-top: 30px;
+    }
+}
+
+
+.column_center {
+    @include flex_function (row, space-between, flex-start, 50px);
+
+    .column_center_text {
+        width: 130px;
+
+        h2 {
+            @include text_function (normal, 700, 16px, DM Sans, #FFF, left);
+            margin-bottom: 40px;
+        }
+
+        p {
+            @include text_function (normal, 400, 16px, DM Sans, #DBDFD0, left);
+            margin-bottom: 30px;
+
+            &:hover{
+                color: #FFF;
+                transform:scale(1.1)
+            }
+        }
+    }
+}
+
+.column_right {
+    @include flex_function (column, start, flex-start, 40px);
+
+    h2 {
+        @include text_function (normal, 700, 16px, DM Sans, #FFF, left);
+    }
+
+    .images {
+        @include flex_function (row, start, flex-start, 10px);
+        flex-wrap: wrap;
+
+        .img1 {
+            @include img_function (url('../../components/Footer/assets/food1.svg'), contain, 195px, 170px, 0, 12px);
+        }
+
+        .img2 {
+            @include img_function (url('../../components/Footer/assets/food2.svg'), contain, 195px, 170px, 0, 12px);
+        }
+
+        .img3 {
+            @include img_function (url('../../components/Footer/assets/food3.svg'), contain, 195px, 170px, 0, 12px);
+        }
+
+        .img4 {
+            @include img_function (url('../../components/Footer/assets/food4.svg'), contain, 195px, 170px, 0, 12px);
+        }
+    }
+}
+
+.line {
+    width: 1293px;
+    height: 1px;
+    background: #414536;
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+
+.hashtag {
+    @include text_function (normal, 400, 16px, DM Sans, #ADB29E, center);
 }

@@ -61,14 +61,19 @@
         .img_waffles {
             @include img_function (url('../../app/menu/assets/waffles.svg'), contain, 306px, 230px, 0, 12px 12px 0 0);
         }
-    }
 
+    }
+    
     .text_container {
         @include flex_function (column, center, center, 15px);
         margin: 30px;
-
+        
         h2 {
             @include text_function (normal, 700, 20px, DM Sans, #2C2F24, center);
+            
+            &:hover{
+                transform: scale(1.1)
+            }
         }
 
         p {
