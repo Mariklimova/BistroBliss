@@ -62,6 +62,10 @@
             @include img_function (url('../../app/menu/assets/waffles.svg'), contain, 306px, 230px, 0, 12px 12px 0 0);
         }
 
+        &:hover{
+            transform: scale(1.05);
+            box-shadow:5px 5px 20px 0 #495460
+        }
     }
     
     .text_container {
@@ -71,17 +75,15 @@
         h2 {
             @include text_function (normal, 700, 20px, DM Sans, #2C2F24, center);
             
-            &:hover{
-                transform: scale(1.1);
-            }
         }
-
+        
         p {
             @include text_function (normal, 400, 16px, DM Sans, #414536, center);
         }
-
+        
         .price {
             @include text_function (normal, 700, 20px, DM Sans, #AD343E, center);
         }
+
     }
 }
