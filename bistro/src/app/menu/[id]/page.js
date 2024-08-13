@@ -6,16 +6,27 @@ import Footer from '@/components/Footer/Footer';
 import { useParams } from 'next/navigation';
 import storage from '../../../storage/storage';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 
 export default function Id() {
     const { id } = useParams();
     const [data, setData] = useState({});
-    const [totalPrice, setTotalPrice] = useState('0');
+    const [totalPrice, setTotalPrice] = useState('');
 
+
+    const [basketItems, setBasketItems] = useState(JSON.parse(localStorage.getItem('basketArr')) || []);
+
+    const addToBasket = () => {
+        const checkItems = basketItems.filter((elem) => elem.id !== data.id);
+        // if(chackItems.length) return;
+        const basket = [...checkItems, { ...data, price: totalPrice }];
+        localStorage.setItem('basketArr', JSON.stringify(basket));
+    }
     useEffect(() => {
         const resultItem = storage.filter((el) => el.id == id);
         setData(resultItem[0])
+        setTotalPrice(resultItem[0].price)
     }, [id]);
 
     const arrSizeFood = [{ size: 'S', count: '1s', priceIndex: 1 },
@@ -36,14 +47,13 @@ export default function Id() {
 
                     <div className={style.buttons_wrapper}>
 
-                        {arrSizeFood.map((el) =>
-                            <button className={style.count_button} onClick={() =>
-                             setTotalPrice((parseFloat(data.price) * el.priceIndex).toFixed(2))}>
+                        {arrSizeFood.map((el,i) =>
+                            <button key = {i} className={style.count_button} onClick={() =>
+                                setTotalPrice((parseFloat(data.price) * el.priceIndex).toFixed(2))}>
 
                                 <p className={style.size}>{el.size}</p>
                                 <p className={style.count}>{el.count}</p>
                             </button>
-
                         )}
                     </div>
 
@@ -58,7 +68,7 @@ export default function Id() {
                             <div className={style.img_info}></div>
                             <p>The cost is not final. Download our mobile app to see the final price and place your order. Earn loyalty points and enjoy your favorite coffee with up to 20% discount.</p>
                         </div>
-                        <button className={style.add}>Add to Order</button>
+                        <button className={style.add} onClick={addToBasket}>Add to Order</button>
                     </div>
                 </div>
             </div>
@@ -69,28 +79,3 @@ export default function Id() {
 }
 
 
-
-
-{/* <button className={style.count_button} onClick={() => setTotalPrice(parseFloat(data.price) * 1)}>
-
-    <p className={style.size}>S</p>
-    <p className={style.count}>1s</p>
-</button>
-
-<button className={style.count_button} onClick={() => setTotalPrice(parseFloat(data.price) * 2)}>
-
-    <p className={style.size}>M</p>
-    <p className={style.count}>2s</p>
-</button>
-
-<button className={style.count_button} onClick={() => setTotalPrice((parseFloat(data.price) * 2.5).toFixed(2))}>
-
-    <p className={style.size}>L</p>
-    <p className={style.count}>3s</p>
-</button>
-
-<button className={style.count_button} onClick={() => setTotalPrice((parseFloat(data.price) * 3).toFixed(2))}>
-
-    <p className={style.size}>XL</p>
-    <p className={style.count}>4s</p>
-</button> */}

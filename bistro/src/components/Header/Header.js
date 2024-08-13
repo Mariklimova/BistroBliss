@@ -42,7 +42,7 @@ export default function Header() {
                     <p><Link href={'/about'}>About</Link></p>
                     <p><Link href={'/menu'}>Menu</Link></p>
                 </nav>
-                <button className={style.btn_book}>Book A Table</button>
+                <Link href={'/basket'}><button className={style.btn_book}>Basket</button></Link>
             </div>
 
         </div>
