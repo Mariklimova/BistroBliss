@@ -11,12 +11,18 @@ import { useEffect, useState } from 'react';
 export default function Id() {
     const { id } = useParams();
     const [data, setData] = useState({});
+    const [totalPrice, setTotalPrice] = useState('0');
 
-    console.log(data);
     useEffect(() => {
         const resultItem = storage.filter((el) => el.id == id);
         setData(resultItem[0])
     }, [id]);
+
+    const arrSizeFood = [{ size: 'S', count: '1s', priceIndex: 1 },
+    { size: 'M', count: '2s', priceIndex: 2 },
+    { size: 'L', count: '3s', priceIndex: 2.5 },
+    { size: 'XL', count: '4s', priceIndex: 3 }];
+
 
     return <>
         <Header />
@@ -27,38 +33,24 @@ export default function Id() {
                     <h1>{data.title}</h1>
                     <h2>{data.description}</h2>
                     <p>Size</p>
+
                     <div className={style.buttons_wrapper}>
 
-                        <button className={style.count_button}>
+                        {arrSizeFood.map((el) =>
+                            <button className={style.count_button} onClick={() =>
+                             setTotalPrice((parseFloat(data.price) * el.priceIndex).toFixed(2))}>
 
-                            <p className={style.size}>S</p>
-                            <p className={style.count}>1s</p>
-                        </button>
+                                <p className={style.size}>{el.size}</p>
+                                <p className={style.count}>{el.count}</p>
+                            </button>
 
-                        <button className={style.count_button}>
-
-                            <p className={style.size}>M</p>
-                            <p className={style.count}>2s</p>
-                        </button>
-
-                        <button className={style.count_button}>
-
-                            <p className={style.size}>L</p>
-                            <p className={style.count}>3s</p>
-                        </button>
-
-                        <button className={style.count_button}>
-
-                            <p className={style.size}>XL</p>
-                            <p className={style.count}>4s</p>
-                        </button>
-
+                        )}
                     </div>
 
                     <div className={style.total}>
                         <div className={style.price}>
                             <p>Total:</p>
-                            <p>{data.price}</p>
+                            <p>{totalPrice} $</p>
                         </div>
 
                         <div className={style.line}></div>
@@ -77,8 +69,28 @@ export default function Id() {
 }
 
 
-// {['S','M','L','XL'].map((el)=><div className={style.count}>
-//
-//     <p>{el}</p>
-//{['1s','2s','3s','4s'].map((elem)=><p className={style.count_text}>{elem}</p>)}
-// </div>)}
+
+
+{/* <button className={style.count_button} onClick={() => setTotalPrice(parseFloat(data.price) * 1)}>
+
+    <p className={style.size}>S</p>
+    <p className={style.count}>1s</p>
+</button>
+
+<button className={style.count_button} onClick={() => setTotalPrice(parseFloat(data.price) * 2)}>
+
+    <p className={style.size}>M</p>
+    <p className={style.count}>2s</p>
+</button>
+
+<button className={style.count_button} onClick={() => setTotalPrice((parseFloat(data.price) * 2.5).toFixed(2))}>
+
+    <p className={style.size}>L</p>
+    <p className={style.count}>3s</p>
+</button>
+
+<button className={style.count_button} onClick={() => setTotalPrice((parseFloat(data.price) * 3).toFixed(2))}>
+
+    <p className={style.size}>XL</p>
+    <p className={style.count}>4s</p>
+</button> */}
