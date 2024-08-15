@@ -8,6 +8,7 @@
 .footer_wrapper {
     @include flex_function (row, start, flex-start, 120px);
     max-width: 1293px;
+    margin: auto
 }
 
 .column_left {

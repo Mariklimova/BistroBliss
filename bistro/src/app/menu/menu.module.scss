@@ -23,38 +23,57 @@
 
 .buttons_wrapper {
     @include flex_function (row, start, center, 8px);
+    margin-top: 23px;
+    // margin-bottom: 70px;
 
     .count_button {
         @include border_function(1px solid #403F3D, #FFF, 100px, 8px 16px 8px 8px);
         @include flex_function (row, start, center, 0);
-        width: 144px;
+        width: 170px;
         height: 46px;
 
         &:hover {
             @include border_function(1px solid #403F3D, #403F3D, 100px, 8px 16px 8px 8px);
             // color: #403F3D;
-            transform: scale(1.1);
+            transform: scale(1.07);
             box-shadow: 5px 5px 10px #403f3dd0;
 
             & .count {
                 color: #FFF;
             }
 
-            & .img_drinks {
+            & .wrapper_img {
                 background-color: #FFF;
                 // color: #403F3D;
                 // color: inherit;
             }
         }
 
-        .img_drinks {
-            // @include border_function(1px solid #403F3D, #403F3D, 100px, 0);
-            // width: 30px;
-            // height: 30px;
-            // @include flex_function (row, center, center, 0);
-            @include img_function (url('../../app/menu/assets/mainFood.svg'), contain, 16px, 24px, 0, 0);
+        .wrapper_img {
+            @include border_function(1px solid #403F3D, #403F3D, 100px, 0);
+            width: 30px;
+            height: 30px;
+            @include flex_function (row, center, center, 0);
 
+            .img_drinks {
+                @include img_function (url('../../app/menu/assets/drinks.png'), contain, 16px, 24px, 0, 0);
+                background-position: center;
+            }
 
+            .img_mainFood {
+                @include img_function (url('../../app/menu/assets/mainFood.png'), contain, 16px, 24px, 0, 0);
+                background-position: center;
+            }
+
+            .img_desserts {
+                @include img_function (url('../../app/menu/assets/desserts.png'), contain, 16px, 24px, 0, 0);
+                background-position: center;
+            }
+
+            .img_all {
+                @include img_function (url('../../app/menu/assets/all.png'), contain, 16px, 24px, 0, 0);
+                background-position: center;
+            }
         }
 
         .count {
@@ -64,10 +83,12 @@
     }
 
 }
+
 .container {
     @include flex_function (row, center, flex-start, 20px);
     flex-wrap: wrap;
-    margin-bottom: 222px;
+    // margin-bottom: 222px;
+    margin: 0px auto 222px;
 
     .item {
         @include border_function (1.5px solid #DBDFD0, #FFFFFF, 12px, 0);
@@ -105,25 +126,25 @@
             @include img_function (url('../../app/menu/assets/waffles.svg'), contain, 306px, 230px, 0, 12px 12px 0 0);
         }
 
-        &:hover{
+        &:hover {
             transform: scale(1.05);
-            box-shadow:5px 5px 20px 0 #495460
+            box-shadow: 5px 5px 20px 0 #495460
         }
     }
-    
+
     .text_container {
-        @include flex_function (column, center, center, 15px);
-        margin: 30px;
-        
+        @include flex_function (column, center, center, 25px);
+        margin: 0 30px 30px;
+
         h2 {
             @include text_function (normal, 700, 20px, DM Sans, #2C2F24, center);
-            
+
         }
-        
+
         p {
             @include text_function (normal, 400, 16px, DM Sans, #414536, center);
         }
-        
+
         .price {
             @include text_function (normal, 700, 20px, DM Sans, #AD343E, center);
         }

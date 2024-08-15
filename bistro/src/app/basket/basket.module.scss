@@ -5,81 +5,93 @@
     margin-top: 99px;
     margin-bottom: 79px;
 }
-
 .container {
     @include flex_function (row, center, flex-start, 20px);
     flex-wrap: wrap;
-    margin-bottom: 222px;
-
+    margin-bottom: 100px;
+    
     .item {
         @include border_function (1.5px solid #DBDFD0, #FFFFFF, 12px, 0);
         width: 306px;
-
+        
         .img_egg {
             @include img_function (url('../../app/menu/assets/eggs.svg'), contain, 306px, 230px, 0, 12px 12px 0 0);
         }
-
+        
         .img_pizza {
             @include img_function (url('../../app/menu/assets/pizza.svg'), contain, 306px, 230px, 0, 12px 12px 0 0);
         }
-
+        
         .img_cocktail {
             @include img_function (url('../../app/menu/assets/cocktail.svg'), contain, 306px, 230px, 0, 12px 12px 0 0);
         }
-
+        
         .img_cake {
             @include img_function (url('../../app/menu/assets/cake.svg'), contain, 306px, 230px, 0, 12px 12px 0 0);
         }
-
+        
         .img_lemonade {
             @include img_function (url('../../app/menu/assets/lemonade.svg'), contain, 306px, 230px, 0, 12px 12px 0 0);
         }
-
+        
         .img_icecream {
             @include img_function (url('../../app/menu/assets/icecream.svg'), contain, 306px, 230px, 0, 12px 12px 0 0);
         }
-
+        
         .img_burger {
             @include img_function (url('../../app/menu/assets/burger.svg'), contain, 306px, 230px, 0, 12px 12px 0 0);
         }
-
+        
         .img_waffles {
             @include img_function (url('../../app/menu/assets/waffles.svg'), contain, 306px, 230px, 0, 12px 12px 0 0);
         }
-
+        
         // &:hover {
-        //     transform: scale(1.05);
-        //     box-shadow: 5px 5px 20px 0 #495460
-        // }
-    }
-
-    .text_container {
-        @include flex_function (column, center, center, 15px);
-        margin: 30px;
-
-        h2 {
-            @include text_function (normal, 700, 20px, DM Sans, #2C2F24, center);
-
+            //     transform: scale(1.05);
+            //     box-shadow: 5px 5px 20px 0 #495460
+            // }
         }
-
-        p {
-            @include text_function (normal, 400, 16px, DM Sans, #414536, center);
+        
+        .text_container {
+            @include flex_function (column, center, center, 15px);
+            margin: 30px;
+            
+            h2 {
+                @include text_function (normal, 700, 20px, DM Sans, #2C2F24, center);
+                
+            }
+            
+            p {
+                @include text_function (normal, 400, 16px, DM Sans, #414536, center);
+            }
+            
+            .price {
+                @include text_function (normal, 700, 20px, DM Sans, #AD343E, center);
         }
-
-        .price {
-            @include text_function (normal, 700, 20px, DM Sans, #AD343E, center);
-        }
-
+        
     }
     .btn_delete {
         @include border_function(1px solid #403F3D, #FFFFFF, 100px, 10px 30px);
         @include text_function (normal, 700, 16px, DM Sans, #403F3D, center);
         // width: 438px;
-
+        
         &:hover {
             transform: scale(1.1);
             box-shadow: 5px 5px 10px #403f3d92;
-
+            
         }
+    }
+
+}
+
+.btn_delete_all {
+    @include border_function(1px solid #403F3D, #FFFFFF, 100px, 10px 30px);
+    @include text_function (normal, 700, 16px, DM Sans, #403F3D, center);
+    margin: 0 0 81px;
+
+    &:hover {
+        transform: scale(1.1);
+        box-shadow: 5px 5px 10px #403f3d92;
+
     }
 }
