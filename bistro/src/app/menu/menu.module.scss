@@ -22,13 +22,13 @@
 }
 
 .buttons_wrapper {
-    @include flex_function (row, start, center, 8px);
+    @include flex_function (row, flex-start, center, 8px);
     margin-top: 23px;
     // margin-bottom: 70px;
 
     .count_button {
         @include border_function(1px solid #403F3D, #FFF, 100px, 8px 16px 8px 8px);
-        @include flex_function (row, start, center, 0);
+        @include flex_function (row, flex-start, center, 0);
         width: 170px;
         height: 46px;
 

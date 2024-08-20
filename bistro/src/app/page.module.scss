@@ -2,7 +2,7 @@
 
 
 .main {
-    @include flex_function(column, start, center, 0);
+    @include flex_function(column, flex-start, center, 0);
     margin: auto;
 }
 
@@ -12,7 +12,7 @@
 }
 
 .title_text {
-    @include flex_function(column, start, center, 0);
+    @include flex_function(column, flex-start, center, 0);
 
     h1 {
         @include text_function(normal, 400, 100px, Playfair Display, #2C2F24, center);
@@ -54,7 +54,7 @@
 }
 
 .menu_content {
-    @include flex_function(column, start, center, 0);
+    @include flex_function(column, flex-start, center, 0);
     height: 712px;
     margin-top: 92px;
 }
@@ -65,7 +65,7 @@
 }
 
 .menu_cards_wrapper {
-    @include flex_function(row, start, flex-start, 24px);
+    @include flex_function(row, flex-start, flex-start, 24px);
 }
 
 .menu_card {
@@ -131,7 +131,7 @@
 }
 
 .services_cards_wrapper {
-    @include flex_function(row, start, flex-start, 24px);
+    @include flex_function(row, flex-start, flex-start, 24px);
 }
 
 .service_card {

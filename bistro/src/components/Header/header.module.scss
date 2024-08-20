@@ -14,13 +14,13 @@
 }
 
 .messengers {
-    @include flex-function(row, start, center, 25px);
+    @include flex-function(row, flex-start, center, 25px);
     margin-right: 1.5rem;
 }
 
 .phone,
 .mail {
-    @include flex-function(row, start, flex-start, 8px);
+    @include flex-function(row, flex-start, flex-start, 8px);
 }
 
 .phone p,
@@ -42,7 +42,7 @@
 }
 
 .icons {
-    @include flex-function(row, start, flex-start, 8px);
+    @include flex-function(row, flex-start, flex-start, 8px);
 }
 
 .iconBlock {
@@ -82,7 +82,7 @@
 }
 
 .logo {
-    @include flex-function(row, start, center, 8px);
+    @include flex-function(row, flex-start, center, 8px);
 
     .food {
         @include img_function (url('../../components/Header/assets/japanese-food.svg'), contain, 56px, 56px, 0, 0);
@@ -96,7 +96,7 @@
 
 
 .navig_btn {
-    @include flex-function(row, start, flex-start, 40px);
+    @include flex-function(row, flex-start, flex-start, 40px);
 
     p {
         padding: 4px 16px;

@@ -5,7 +5,7 @@
 }
 
 .visitcard {
-    @include flex_function (column, start, flex-start, 0);
+    @include flex_function (column, flex-start, flex-start, 0);
     max-width: 1293px;
     margin: auto;
 }
@@ -19,7 +19,7 @@
 }
 
 .visitcard_text {
-    @include flex_function (column, start, flex-start, 24px);
+    @include flex_function (column, flex-start, flex-start, 24px);
     width: 557px;
     margin: auto;
 
@@ -50,7 +50,7 @@
 }
 
 .statistic_text {
-    @include flex_function (column, start, center, 20px);
+    @include flex_function (column, flex-start, center, 20px);
     width: 610px;
 
     h1 {
@@ -63,7 +63,7 @@
 }
 
 .statistic_block {
-    @include flex_function (row, start, flex-start, 20px);
+    @include flex_function (row, flex-start, flex-start, 20px);
     flex-wrap: wrap;
     width: 610px;
 

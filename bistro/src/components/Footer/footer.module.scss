@@ -6,17 +6,17 @@
 }
 
 .footer_wrapper {
-    @include flex_function (row, start, flex-start, 120px);
+    @include flex_function (row, flex-start, flex-start, 120px);
     max-width: 1293px;
     margin: auto
 }
 
 .column_left {
-    @include flex_function (column, start, flex-start, 30px);
+    @include flex_function (column, flex-start, flex-start, 30px);
     width: 550px;
 
     .footer_logo {
-        @include flex_function (row, start, center, 5px);
+        @include flex_function (row, flex-start, center, 5px);
 
         .white_logo {
             @include img_function (url('../../components/Footer/assets/japanese-food-white.svg'), contain, 56px, 56px, 0, 0);
@@ -59,14 +59,14 @@
 }
 
 .column_right {
-    @include flex_function (column, start, flex-start, 40px);
+    @include flex_function (column, flex-start, flex-start, 40px);
 
     h2 {
         @include text_function (normal, 700, 16px, DM Sans, #FFF, left);
     }
 
     .images {
-        @include flex_function (row, start, flex-start, 10px);
+        @include flex_function (row, flex-start, flex-start, 10px);
         flex-wrap: wrap;
 
         .img1 {
