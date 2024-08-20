@@ -88,7 +88,7 @@
 }
 
 .line {
-    width: 1293px;
+    max-width: 1293px;
     height: 1px;
     background: #414536;
     margin-top: 100px;
@@ -97,4 +97,10 @@
 
 .hashtag {
     @include text_function (normal, 400, 16px, DM Sans, #ADB29E, center);
+}
+
+@media screen and (max-width:1000px){
+    .column_right {
+        display: none;
+    } 
 }

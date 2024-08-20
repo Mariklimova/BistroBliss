@@ -16,13 +16,13 @@
 
     h1 {
         @include text_function(normal, 400, 100px, Playfair Display, #2C2F24, center);
-        width: 667px;
+        max-width: 667px;
         margin-top: 171px;
     }
 
     p {
         @include text_function(normal, 400, 20px, DM Sans, #2C2F24, center);
-        width: 537px;
+        max-width: 537px;
         margin-top: 32px;
     }
 }
@@ -55,8 +55,7 @@
 
 .menu_content {
     @include flex_function(column, flex-start, center, 0);
-    height: 712px;
-    margin-top: 92px;
+    margin: 92px 0;
 }
 
 .menu_content_title {
@@ -65,12 +64,13 @@
 }
 
 .menu_cards_wrapper {
-    @include flex_function(row, flex-start, flex-start, 24px);
+    @include flex_function(row, center, flex-start, 24px);
+    flex-wrap: wrap;
 }
 
 .menu_card {
     @include border_function(2px solid #DBDFD0, #FFFFFF, 12px, 40px 33px);
-    width: 306px;
+    max-width: 306px;
     height: 375px;
     text-align: center;
 }
@@ -117,25 +117,28 @@
 
 .services_color {
     background-color: #F9F9F7;
+    width: 100%;
 }
 
 .services_content {
     max-width: 1296px;
-    margin: 120px 152px;
+    margin: 120px auto;
 }
 
 .services_title {
-    @include text_function(normal, 500, 55px, Playfair Display, #2C2F24, left);
-    width: 675px;
-    margin-bottom: 64px;
+    @include text_function(normal, 500, 55px, Playfair Display, #2C2F24, center);
+    max-width: 675px;
+    margin:0 auto 64px;
 }
 
 .services_cards_wrapper {
-    @include flex_function(row, flex-start, flex-start, 24px);
+    @include flex_function(row, center, flex-start, 24px);
+    flex-wrap: wrap;
 }
 
 .service_card {
     @include flex_function(column, center, flex-start, 0);
+    max-width: 306px;
 }
 
 .img_caterings {
@@ -163,7 +166,7 @@
     }
 
     p {
-        @include text_function(normal, 400,  16px, DM Sans, #414536, left);
+        @include text_function(normal, 400, 16px, DM Sans, #414536, left);
     }
 
 }

@@ -2,7 +2,7 @@
 
 .menu_wrapper {
     @include flex_function (column, center, flex-start, 85px);
-    width: 1293px;
+    max-width: 1293px;
     margin: auto;
 }
 
