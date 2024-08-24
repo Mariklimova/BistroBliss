@@ -19,7 +19,6 @@ export default function Id() {
 
     const addToBasket = () => {
         const checkItems = basketItems.filter((elem) => elem.id !== data.id);
-        // if(chackItems.length) return;
         const basket = [...checkItems, { ...data, price: totalPrice }];
         localStorage.setItem('basketArr', JSON.stringify(basket));
     }
