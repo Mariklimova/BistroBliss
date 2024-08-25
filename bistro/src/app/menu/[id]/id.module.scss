@@ -53,7 +53,7 @@
 
 .text_item {
     @include flex_function (column, flex-start, flex-start, 24px);
-    width: 600px;
+    max-width: 600px;
     margin: auto;
 
     h1 {
@@ -148,7 +148,7 @@
     .add {
         @include border_function(1px solid #403F3D, #FFFFFF, 100px, 10px 78px);
         @include text_function (normal, 700, 16px, DM Sans, #403F3D, center);
-        width: 438px;
+        max-width: 438px;
 
         &:hover {
             transform: scale(1.1);

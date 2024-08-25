@@ -13,7 +13,7 @@
 
 .column_left {
     @include flex_function (column, flex-start, flex-start, 30px);
-    width: 550px;
+    max-width: 550px;
 
     .footer_logo {
         @include flex_function (row, flex-start, center, 5px);
@@ -39,7 +39,7 @@
     @include flex_function (row, space-between, flex-start, 50px);
 
     .column_center_text {
-        width: 130px;
+        max-width: 130px;
 
         h2 {
             @include text_function (normal, 700, 16px, DM Sans, #FFF, left);
@@ -103,4 +103,13 @@
     .column_right {
         display: none;
     } 
+}
+
+@media screen and (max-width:600px){
+    .footer_wrapper {
+        flex-wrap: wrap;
+    } 
+    .footer_color{
+        padding: 60px 60px 40px;   
+    }
 }

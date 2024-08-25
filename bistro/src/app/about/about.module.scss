@@ -12,16 +12,17 @@
 
 .visitcard_wrapper {
     @include flex_function (row, space-between, center, 90px);
+
 }
 
 .img_visitcard {
-    @include img_function (url('../../app/about/assets/imgFamilyFood.svg'), contain, 649px, 616px, 85px 0 120px, 12px);
+    @include img_function (url('../../app/about/assets/imgFamilyFood.svg'), contain, 649px, 616px, 85px auto 120px, 12px);
 }
 
 .visitcard_text {
     @include flex_function (column, flex-start, flex-start, 24px);
-    width: 557px;
-    margin: auto;
+    max-width: 557px;
+    margin: 0 auto 120px;
 
     h1 {
         @include text_function (normal, 500, 55px, Playfair Display, #2C2F24, left);
@@ -38,20 +39,20 @@
 }
 
 .statistic {
-    @include flex_function (row, space-between, center, 0);
+    @include flex_function (row, center, center, 131px);
     max-width: 1293px;
-    margin: auto;
-    padding: 138px 0;
+    margin: 138px auto;
+    // padding: 138px 0;
 }
 
 .statistic_wrapper {
     @include flex_function (column, space-between, center, 20px);
-    width: 610px;
+    max-width: 610px;
 }
 
 .statistic_text {
     @include flex_function (column, flex-start, center, 20px);
-    width: 610px;
+    // width: 610px;
 
     h1 {
         @include text_function (normal, 500, 55px, Playfair Display, #2C2F24, left);
@@ -63,9 +64,10 @@
 }
 
 .statistic_block {
-    @include flex_function (row, flex-start, flex-start, 20px);
+    @include flex_function (row, center, flex-start, 20px);
     flex-wrap: wrap;
-    width: 610px;
+    // width: 610px;
+    // margin: auto;
 
     .statistic_item {
         @include border_function (1px solid #DBDFD0, #FFFFFF, 8px, 30px 0);
@@ -83,4 +85,35 @@
 
 .img_statistic {
     @include img_function (url('../../app/about/assets/kitchen.svg'), contain, 555px, 680px, 0, 12px)
+}
+
+@media screen and (max-width:1000px){
+    .visitcard_wrapper {
+    flex-wrap: wrap;
+    gap: 0;
+    } 
+    .statistic {
+        flex-wrap: wrap;
+    }
+    
+}
+
+@media screen and (max-width:600px){
+    .img_visitcard {
+        width: 370px;
+        height: 370px;
+    }
+    .statistic{
+        margin-bottom: 0;
+    }
+
+    .img_statistic{
+        width: 455px;
+        height: 555px;
+    }
+
+    .visitcard_text,
+    .statistic_text{
+        padding: 0 20px;
+    }
 }

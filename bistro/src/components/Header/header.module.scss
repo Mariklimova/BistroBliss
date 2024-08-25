@@ -122,3 +122,17 @@
 .btn_book:hover {
     transform: scale(1.1);
 }
+
+
+
+@media screen and (max-width:600px){
+    .navig_btn{
+    gap: 0;
+    } 
+    .wrapper{
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+    
+}
