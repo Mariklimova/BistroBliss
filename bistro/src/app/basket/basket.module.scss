@@ -86,7 +86,7 @@
 .btn_delete_all {
     @include border_function(1px solid #403F3D, #FFFFFF, 100px, 10px 30px);
     @include text_function (normal, 700, 16px, DM Sans, #403F3D, center);
-    margin: 0 0 81px;
+    margin: 0 30px 81px;
 
     &:hover {
         transform: scale(1.1);

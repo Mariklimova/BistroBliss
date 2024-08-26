@@ -65,7 +65,7 @@
     }
 
     p {
-        @include text_function (normal, 400, 16px, DM Sans, #414536, left);
+        @include text_function (normal, 400, 16px, DM Sans, #414536, center);
     }
 }
 
@@ -75,7 +75,7 @@
     .count_button {
         @include border_function(1px solid #403F3D, #FFF, 100px, 8px 16px 8px 8px);
         @include flex_function (row, flex-start, center, 0);
-        width: 81px;
+        max-width: 81px;
         height: 46px;
 
         &:hover {
@@ -141,14 +141,14 @@
 
         p {
             @include text_function (normal, 700, 10px, DM Sans, #403F3D, justify);
-            width: 410px;
+            max-width: 410px;
         }
     }
 
     .add {
         @include border_function(1px solid #403F3D, #FFFFFF, 100px, 10px 78px);
         @include text_function (normal, 700, 16px, DM Sans, #403F3D, center);
-        max-width: 438px;
+        width: 438px;
 
         &:hover {
             transform: scale(1.1);
@@ -160,12 +160,34 @@
 }
 
 
-@media screen and (max-width:1000px){
+@media screen and (max-width:1000px) {
     .wrrapper_item {
-    flex-wrap: wrap;
-    } 
+        flex-wrap: wrap;
+    }
 
     .text_item {
         align-items: center;
+    }
+}
+
+
+@media screen and (max-width:600px) {
+    .wrrapper_item {
+        padding: 85px 15px;
+    }
+    
+    .text_item h1,
+    .text_item h2 {
+        text-align: center;
+    }
+
+    .total .add {
+        width: 330px;
+
+    }
+
+    .total .text_description .img_info {
+        width: 40px;
+        height: 40px;
     }
 }
