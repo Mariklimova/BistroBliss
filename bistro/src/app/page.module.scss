@@ -8,7 +8,6 @@
 
 .backgraund_img {
     @include img_function(url('../../app/assets/bg.svg'), cover, 100%, 800px, 0, 0);
-    // background-position: center;
 }
 
 .title_text {

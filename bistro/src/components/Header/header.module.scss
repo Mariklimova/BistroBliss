@@ -86,7 +86,7 @@
 
     .food {
         @include img_function (url('../../components/Header/assets/japanese-food.svg'), contain, 56px, 56px, 0, 0);
-
+        
     }
 
     h1 {
@@ -97,6 +97,7 @@
 
 .navig_btn {
     @include flex-function(row, flex-start, flex-start, 40px);
+    
 
     p {
         padding: 4px 16px;
