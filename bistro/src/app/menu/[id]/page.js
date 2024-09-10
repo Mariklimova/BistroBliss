@@ -13,8 +13,7 @@ export default function Id() {
     const { id } = useParams();
     const [data, setData] = useState({});
     const [totalPrice, setTotalPrice] = useState('');
-    const [isPressed, setIsPressed] = useState(false);
-
+   
 
     const [basketItems, setBasketItems] = useState(JSON.parse(localStorage.getItem('basketArr')) || []);
 
@@ -25,19 +24,22 @@ export default function Id() {
         const basket = [...checkItems, { ...data, price: totalPrice }];
         localStorage.setItem('basketArr', JSON.stringify(basket));
     }
+
+
+    const [arrSizeFood, setArrSizeFood] = useState([{ size: 'S', count: '1s', priceIndex: 1, isActive: true },
+    { size: 'M', count: '2s', priceIndex: 2, isActive: false },
+    { size: 'L', count: '3s', priceIndex: 2.5, isActive: false },
+    { size: 'XL', count: '4s', priceIndex: 3, isActive: false }]);
+
+
     useEffect(() => {
         const resultItem = storage.filter((el) => el.id == id);
         setData(resultItem[0])
         setTotalPrice(resultItem[0].price)
     }, [id]);
 
-    const arrSizeFood = [{ size: 'S', count: '1s', priceIndex: 1, isActive: true },
-    { size: 'M', count: '2s', priceIndex: 2, isActive: false },
-    { size: 'L', count: '3s', priceIndex: 2.5, isActive: false },
-    { size: 'XL', count: '4s', priceIndex: 3, isActive: false }];
 
-    // const handleSizeClick = () => arrSizeFood.map((item, i) => ({...item,isActive: i === index}));
-    
+
     return <>
         <Header />
         <div className={style.wrrapper_color}>
@@ -51,15 +53,17 @@ export default function Id() {
                     <div className={style.buttons_wrapper}>
 
                         {arrSizeFood.map((el, i) =>
-                            <button key={i} className={isPressed ? style.active : style.count_button} onClick={() => {
-                                    setTotalPrice((parseFloat(data.price) * el.priceIndex).toFixed(2))
-                                    setIsPressed(prevState => !prevState)
-                                }}   onMouseLeave={() => setIsPressed(false)}>
+                            <button key={i} className={`${style.count_button} ${el.isActive ? `${style.active}` : ''}`} onClick={() => {
+                                setTotalPrice((parseFloat(data.price) * el.priceIndex).toFixed(2));
+                                setArrSizeFood((prev) => prev.map((item) => item.size === el.size ? { ...item, isActive: true } : { ...item, isActive: false }));
+                            }}>
 
                                 <p className={style.size}>{el.size}</p>
                                 <p className={style.count}>{el.count}</p>
                             </button>
                         )}
+
+
                     </div>
 
                     <div className={style.total}>

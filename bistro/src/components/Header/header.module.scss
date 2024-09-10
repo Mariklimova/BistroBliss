@@ -86,7 +86,7 @@
 
     .food {
         @include img_function (url('../../components/Header/assets/japanese-food.svg'), contain, 56px, 56px, 0, 0);
-        
+
     }
 
     h1 {
@@ -97,7 +97,7 @@
 
 .navig_btn {
     @include flex-function(row, flex-start, flex-start, 40px);
-    
+
 
     p {
         padding: 4px 16px;
@@ -126,14 +126,22 @@
 
 
 
-@media screen and (max-width:600px){
-    .navig_btn{
-    gap: 0;
-    } 
-    .wrapper{
+@media screen and (max-width:600px) {
+
+    .phone p,
+    .mail a {
+        font-size: 14px;
+
+    }
+
+    .navig_btn {
+        gap: 0;
+    }
+
+    .wrapper {
         flex-wrap: wrap;
         gap: 20px;
         justify-content: center;
     }
-    
+
 }
